@@ -27,11 +27,12 @@ The function `calculate_demographic_data()` does the following:
 
 ## 🧪 Files Included
 
-📁 project-folder/
+📁 demographics_analyzer/
 ├── adult.data.csv ← The dataset
 ├── demographic_data_analyzer.py ← Main Python script with the function
 ├── test_module.py ← Tests provided by freeCodeCamp
 └── main.py ← For testing and printing the output
+
 
 
 
@@ -65,6 +66,5 @@ Top occupations in India: Prof-specialty
 🙋‍♂️ Author
 Hafizur Rahman
 Student, CSE, Southeast University
-GitHub: Hafizur-Rahman-SD
-
+GitHub: [Hafizur-Rahman-SD](https://github.com/Hafizur-Rahman-SD) 
 ###This project is based on the freeCodeCamp Data Analysis Certification.
