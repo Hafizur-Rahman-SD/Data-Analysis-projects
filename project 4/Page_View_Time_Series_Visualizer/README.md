@@ -12,7 +12,7 @@ fcc-forum-pageviews.csv – The dataset containing daily page views.
 
 README.md – This file, describes the project.
 
-📊 Data Description
+## 📊 Data Description
 
 The dataset (fcc-forum-pageviews.csv) contains page view data from May 2016 to December 2019.
 
@@ -22,31 +22,31 @@ date: Date of the observation (daily).
 
 value: Number of page views on that date.
 
-✅ Tasks Completed
+## ✅ Tasks Completed
 
-Data Cleaning
+1. Data Cleaning
 
 Removed the top and bottom 2.5% of data based on the value column to remove outliers.
 
-Line Plot
+2. Line Plot
 
 A line plot showing daily page views over time.
 
 Shows overall trend in page views.
 
-Bar Plot (Categorical Plot)
+3. Bar Plot (Categorical Plot)
 
 Displays average page views per month grouped by year.
 
 Uses Seaborn's catplot() function.
 
-Heat Map
+4. Heat Map
 
 Displays correlation of average daily page views by month and day of week.
 
 Uses Seaborn's heatmap() function.
 
-📦 Python Libraries Used
+## 📦 Python Libraries Used
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -55,12 +55,12 @@ import seaborn as sns
 📂 Project Structure
 
 Page View Time Series Visualizer/
-├── fcc-forum-pageviews.csv
-├── time_series_visualizer.py
-├── test_module.py
-└── README.md
+    fcc-forum-pageviews.csv
+    time_series_visualizer.py
+    test_module.py
+    README.md
 
-▶️ How to Run the Project
+## ▶️ How to Run the Project
 
 Make sure you have Python and required libraries installed:
 
@@ -74,7 +74,7 @@ To run the tests:
 
 python test_module.py
 
-📈 Example Outputs
+## 📈 Example Outputs
 
 Line Plot: Shows a clear trend in user activity on the forum over time.
 
@@ -82,13 +82,13 @@ Categorical Plot: Displays monthly trends grouped by year.
 
 Heat Map: Highlights patterns based on weekdays and months.
 
-📌 Note
+## 📌 Note
 
 Keep the dataset file in the same directory as the Python scripts.
 
 Make sure file names are correct: time_series_visualizer.py, not something else.
 
-🏁 Final Thoughts
+## 🏁 Final Thoughts
 
 This project is a great way to practice:
 
@@ -105,4 +105,5 @@ Author: Hafizur Rahman
 GitHub Repo: [https://github.com/Hafizur-Rahman-SD/Data-Analysis-projects]
 
 If you found this project helpful, feel free to give it a ⭐ on GitHub!
+                Thank You. 
 
