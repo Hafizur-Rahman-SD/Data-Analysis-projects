@@ -1,36 +1,43 @@
+##import necessary libraries
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
 def draw_plot():
-    # Read data from file
-    df = pd.read_csv('epa_sea_level.csv') ##load the dataset
+    # 1. Draw load data
+    df = pd.read_csv('epa-sea-level.csv')
 
-    # Create scatter plot
-    plt.figure(figsize=(10, 6))
-    plt.scatter(df['Year'], df['CSIRO Adjusted Sea Level'], label = 'original data')
+    # 2. Scatter plot banano
+    plt.figure(figsize=(10,6))
+    plt.scatter(df['Year'], df['CSIRO Adjusted Sea Level'], color='blue', s=10)
 
-    # Create first line of best fit (1880 - 2050)
-    res = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
-    x_pred = pd.Series(range(1880, 2051))
-    y_pred = res.intercept + res.slope * x_pred
-    plt.plot(x_pred, y_pred, 'r', label='Best fit line 1880-2050')
+    # 3. First line of best fit (shob data niye)
+    res_all = linregress(df['Year'], df['CSIRO Adjusted Sea Level'])
+    x_all = pd.Series(range(df['Year'].min(), 2051))
+    y_all = res_all.intercept + res_all.slope * x_all
+    plt.plot(x_all, y_all, 'r', label='Fit: all data')
 
-    # Create second line of best fit (2000 - 2050)
-    df_recent = df[df['Year'] >= 2000]
-    res_recent = linregress(df_recent['Year'], df_recent['CSIRO Adjusted Sea Level'])
-    x_pred_recent = pd.Series(range(2000, 2051))
-    y_pred_recent = res_recent.intercept + res_recent.slope * x_pred_recent
-    plt.plot(x_pred_recent, y_pred_recent, 'g', label='Best fit line 2000-2050')
+    # 4. Second line of best fit (2000 theke shuru kore)
+    df_2000 = df[df['Year'] >= 2000]
+    res_2000 = linregress(df_2000['Year'], df_2000['CSIRO Adjusted Sea Level'])
+    x_2000 = pd.Series(range(2000, 2051))
+    y_2000 = res_2000.intercept + res_2000.slope * x_2000
+    plt.plot(x_2000, y_2000, 'green', label='Fit: 2000 onwards')
 
-    # Add labels and title
-    plt.xlabel('Year')
-    plt.ylabel('Sea Level (inches)')
-    plt.title('Rise in Sea Level')
-    plt.legend()
+    # 5. Labels, title, legend add koro
+    ax = plt.gca()   # Current axis object
+    ax.set_xlabel('Year')                       # Label set kora axis object diye
+    ax.set_ylabel('Sea Level (inches)')
+    ax.set_title('Rise in Sea Level')
+    ax.legend()
 
-    # Save plot and return
-    plt.savefig("sea_level_plot.png")
+    # 6. Plot save kora and show kora
+    plt.savefig('sea_level_predector.png')
+    plt.show()
 
+    # 7. Axis return kore (testing er jonno)
     return plt.gca()
 
+# Function run kore
+draw_plot()
